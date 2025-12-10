@@ -22,6 +22,10 @@ Route::get('/kontak', function () {
     return view('pages.kontak');
 })->name('kontak');
 
+Route::get('/test', function () {
+    return 'Laravel jalan! Halo dari Bhagya Artha.';
+});
+
 // Fallback Route (penting buat Vercel/Netlify biar semua URL forward ke Laravel, ga download file)
 Route::fallback(function () {
     return view('pages.home'); // Atau redirect('home') kalau mau
