@@ -1,24 +1,17 @@
 {
-    "functions": {
-      "public/index.php": {
-        "runtime": "vercel-php@0.6.0"
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/public/index.php"
       }
-    },
-    "routes": [
+    ],
+    "headers": [
       {
-        "src": "/(.*)",
-        "dest": "/public/index.php",
-        "headers": {
-          "Content-Type": "text/html; charset=utf-8"
-        }
-      },
-      {
-        "src": "/assets/(.*)",
-        "dest": "/public/assets/$1"
-      },
-      {
-        "src": "/picture/(.*)",
-        "dest": "/public/picture/$1"
+        "source": "/(.*)",
+        "headers": [
+          { "key": "Content-Type", "value": "text/html; charset=utf-8" }
+        ]
       }
-    ]
+    ],
+    "trailingSlash": true
   }
